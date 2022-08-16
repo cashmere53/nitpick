@@ -1,7 +1,14 @@
+.git
 .mypy_cache
 .venv
 .vscode
-__pycache__
 tests
+*/__pycache__
 
 token.txt
+
+Dockerfile
+.dockerignore
+docker-compose.yaml
+.editorconfig
+.gitignore

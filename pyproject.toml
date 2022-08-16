@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nitpick"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["cashmere53 <15913755+cashmere53@users.noreply.github.com>"]
 license = "GPL-3.0-or-later"
@@ -13,7 +13,7 @@ loguru = "^0.6.0"
 "discord.py" = {git = "https://github.com/Rapptz/discord.py", rev = "master"}
 
 
-[tool.poetry.group.dev.dependencies]
+[tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
 black = "^22.6.0"
 isort = "^5.10.1"

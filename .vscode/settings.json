@@ -1,0 +1,23 @@
+{
+    "editor.formatOnSave": true,
+    "python.formatting.blackPath": "${workspaceFolder}/.venv/Scripts/black",
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [],
+    "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "${workspaceFolder}/.venv/Scripts/pflake8",
+    "python.linting.flake8Args": [],
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyPath": "${workspaceFolder}/.venv/Scripts/mypy",
+    "python.linting.mypyArgs": [],
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "cSpell.words": [
+        "loguru",
+        "undeafened",
+        "unmute",
+        "unmuted"
+    ]
+}

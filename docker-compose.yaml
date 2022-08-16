@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  nitpick:
+    build: .
+    restart: always
+    environment:
+      - TZ=Asia/Tokyo
+    secrets:
+      - token
+
+secrets:
+  token:
+    file: ./token.txt

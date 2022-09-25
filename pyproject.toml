@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nitpick"
-version = "0.2.0"
+version = "0.2.1"
 description = ""
 authors = ["cashmere53 <15913755+cashmere53@users.noreply.github.com>"]
 license = "GPL-3.0-or-later"

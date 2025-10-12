@@ -1,6 +1,6 @@
 [project]
 name = "nitpick"
-version = "0.2.2"
+version = "0.2.3"
 description = ""
 readme = "README.md"
 authors = [
@@ -48,7 +48,7 @@ unfixable = ["F401", "F841"]
 convention = "google"
 
 [tool.ruff.lint.per-file-ignores]
-"tests/**/*.py" = ["S101"]
+"tests/**/*.py" = ["S101", "S105", "S106"]
 
 [tool.mypy]
 python_version = "3.13"

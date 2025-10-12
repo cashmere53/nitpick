@@ -37,17 +37,20 @@ def load() -> str:
     with token_file.open("r") as fp:
         buffer = [x.strip() for x in fp]
 
-    token = buffer[0]
-    if len(token) == 0:
+    if not buffer or not buffer[0]:
         msg = f"Token is empty in file: {token_file}"
         raise TokenLoadError(msg)
+
+    token = buffer[0]
     logger.success(f"Success to load token: {token}")
     return token
 
 
 def _find_token_file() -> Path:
-    """
-    Checks for the existence of files in the order listed in LOADING_FILE_ORDER and returns the path of the first file found.
+    """Find the first existing token file from LOADING_FILE_ORDER.
+
+    Checks for the existence of files in the order listed in LOADING_FILE_ORDER
+    and returns the path of the first file found.
 
     Raises:
         FileNotFoundError: If none of the paths listed in LOADING_FILE_ORDER exist.

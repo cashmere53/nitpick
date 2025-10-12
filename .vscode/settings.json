@@ -38,7 +38,7 @@
             "scope": "workspace"
         }
     },
-    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.typeCheckingMode": "standard",
     "files.exclude": {
         "**/__pycache__": true,
         "**/*.pyc": true,

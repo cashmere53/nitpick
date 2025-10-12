@@ -1,8 +1,10 @@
 # Custom Dictionary Words
+adduser
 celerybeat
 Connor
 dmypy
 filterwarnings
+gecos
 htmlcov
 ipynb
 ipython
@@ -20,7 +22,9 @@ pyenv
 pyflow
 pypa
 pypackages
+pyproject
 pytest
+PYTHONUNBUFFERED
 repr
 ropeproject
 scrapy
@@ -30,6 +34,7 @@ Spyder
 spyderproject
 spyproject
 testpaths
+tomli
 undeafened
 unmute
 unmuted

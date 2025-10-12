@@ -7,9 +7,10 @@ else:
     import tomli as tl
 
 
-def test_version() -> None:
-    import nitpick  # noqa: PLC0415
+import nitpick
 
+
+def test_version() -> None:
     pyproject_file = Path("./pyproject.toml")
     with pyproject_file.open("rb") as fp:
         parsed_content = tl.load(fp)

@@ -4,7 +4,7 @@ from loguru import logger
 
 
 class TokenLoadError(Exception):
-    """トークン読み込みに関するエラー."""
+    """Error related to token loading."""
 
 
 LOADING_FILE_ORDER: list[str] = [
@@ -17,17 +17,17 @@ LOADING_FILE_ORDER: list[str] = [
 
 def load() -> str:
     """
-    トークンファイルからトークンを読み込む.
+    Load token from a token file.
 
-    LOADING_FILE_ORDERで定義された順序でファイルを検索し、
-    最初に見つかったファイルからトークンを読み込んで返す。
+    Searches for a file in the order defined by LOADING_FILE_ORDER,
+    and returns the token read from the first file found.
 
     Returns:
-        str: 読み込まれたトークン文字列
+        str: The loaded token string
 
     Raises:
-        FileNotFoundError: トークンファイルが見つからない場合
-        TokenLoadError: トークンが空の場合
+        FileNotFoundError: If no token file is found
+        TokenLoadError: If the token is empty
     """
     token_file: Path = _find_token_file()
     logger.info(f"load token file from {token_file}")
@@ -39,7 +39,7 @@ def load() -> str:
 
     token = buffer[0]
     if len(token) == 0:
-        msg = "Token is empty in the file"
+        msg = f"Token is empty in file: {token_file}"
         raise TokenLoadError(msg)
     logger.success(f"Success to load token: {token}")
     return token
@@ -47,13 +47,13 @@ def load() -> str:
 
 def _find_token_file() -> Path:
     """
-    LOADING_FILE_ORDERに記載されいてる順番でファイル存在の有無をチェックし、最初に見つかったファイルパスを返す.
+    Checks for the existence of files in the order listed in LOADING_FILE_ORDER and returns the path of the first file found.
 
     Raises:
-        FileNotFoundError: LOADING_FILE_ORDER記載のパスをすべてチェックしたが、存在しなかった
+        FileNotFoundError: If none of the paths listed in LOADING_FILE_ORDER exist.
 
     Returns:
-        Path: 最初に見つかったファイル
+        Path: The first file found.
     """
     ret_path: Path | None = None
     for path in map(Path, LOADING_FILE_ORDER):

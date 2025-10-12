@@ -128,5 +128,23 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# uv (build system)
+.uv/
+uv.lock
+
+# Version managers
+.tool-versions
+
+# Docker development
+docker-compose.override.yml
+
 # other files
 token*.txt

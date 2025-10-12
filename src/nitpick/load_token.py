@@ -46,8 +46,10 @@ def load() -> str:
 
 
 def _find_token_file() -> Path:
-    """
-    Checks for the existence of files in the order listed in LOADING_FILE_ORDER and returns the path of the first file found.
+    """Find the first existing token file from LOADING_FILE_ORDER.
+
+    Checks for the existence of files in the order listed in LOADING_FILE_ORDER
+    and returns the path of the first file found.
 
     Raises:
         FileNotFoundError: If none of the paths listed in LOADING_FILE_ORDER exist.

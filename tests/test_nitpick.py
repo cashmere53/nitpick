@@ -1,18 +1,18 @@
-# -*- coding: utf-8 -*-
-
+import sys
 from pathlib import Path
 
-from nitpick import __version__
+if sys.version_info >= (3, 11):
+    import tomllib as tl
+else:
+    import tomli as tl
 
 
 def test_version() -> None:
-    # read pyproject.toml file
-    pyproject: Path = Path("./pyproject.toml")
-    version_string: str = ""
-    with pyproject.open("r", encoding="utf-8") as fp:
-        for line in fp:
-            if line.startswith("version"):
-                version_string = line.lstrip("version =").rstrip().strip('"')
-                break
+    import nitpick  # noqa: PLC0415
 
-    assert __version__ == version_string
+    pyproject_file = Path("./pyproject.toml")
+    with pyproject_file.open("rb") as fp:
+        parsed_content = tl.load(fp)
+
+    correct_version = parsed_content["project"]["version"]
+    assert nitpick.__version__ == correct_version

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from discord import Client, Intents
 
 from nitpick.bot import NitpickBot

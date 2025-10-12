@@ -5,6 +5,7 @@ Connor
 dmypy
 filterwarnings
 gecos
+healthcheck
 htmlcov
 ipynb
 ipython

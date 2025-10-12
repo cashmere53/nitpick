@@ -37,7 +37,7 @@ def load() -> str:
     with token_file.open("r") as fp:
         buffer = [x.strip() for x in fp]
 
-    if not buffer or len(buffer[0]) == 0:
+    if not buffer or not buffer[0]:
         msg = f"Token is empty in file: {token_file}"
         raise TokenLoadError(msg)
 

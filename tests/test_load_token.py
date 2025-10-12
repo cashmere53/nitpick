@@ -14,7 +14,7 @@ class TestLoad:
     def test_load_success(self, tmp_path: Path) -> None:
         """Test successful token loading."""
         token_file = tmp_path / "token.txt"
-        test_token = "my_secret_token_123"
+        test_token = "test_token_value"
         token_file.write_text(test_token)
 
         with patch.object(load_token, "LOADING_FILE_ORDER", [str(token_file)]):

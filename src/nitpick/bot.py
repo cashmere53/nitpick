@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from __future__ import annotations
 
 from discord import Client, Intents, Interaction, Member, Message, Object

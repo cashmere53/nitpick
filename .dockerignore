@@ -1,14 +1,55 @@
+# Git
 .git
-.mypy_cache
-.venv
-.vscode
-tests
-*/__pycache__
+.gitignore
+.gitattributes
 
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing and coverage
+tests/
+.pytest_cache/
+.coverage
+.tox/
+.hypothesis/
+
+# Build artifacts
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# uv (build system)
+.uv/
+uv.lock
+
+# Sensitive files
 token.txt
+token*.txt
 
+# Docker files
 Dockerfile
 .dockerignore
 docker-compose.yaml
+docker-compose.override.yml
+
+# Documentation and config
+README.md
+LICENSE
 .editorconfig
-.gitignore

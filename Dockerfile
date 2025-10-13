@@ -16,19 +16,18 @@ ENV HOME=/home/melon
 WORKDIR ${HOME}
 
 # まず依存関係定義ファイルのみコピー（キャッシュ効率化）
-COPY --chown=melon:melon pyproject.toml ./
+COPY --chown=melon:melon pyproject.toml README.md ./
 
 # ユーザー切り替え
 USER melon
 
-# 依存関係のみ先にインストール
-RUN python -m pip install --no-cache-dir --upgrade pip && \
-    python -m pip install --no-cache-dir .
+# 依存関係のみ先にインストール（editable installを避けて依存関係のみ）
+RUN python -m pip install --no-cache-dir --upgrade pip
 
 # 残りのファイルをコピー
 COPY --chown=melon:melon . .
 
-# 再インストール（既に依存関係は入っているので高速）
+# パッケージをインストール
 RUN python -m pip install --no-cache-dir .
 
 CMD ["python", "-m", "nitpick"]

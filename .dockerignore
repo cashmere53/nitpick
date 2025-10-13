@@ -50,6 +50,5 @@ docker-compose.yaml
 docker-compose.override.yml
 
 # Documentation and config
-README.md
 LICENSE
 .editorconfig
